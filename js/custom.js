@@ -10,7 +10,7 @@ function expensesCalculate() {
     if (foodInputValue >= 0 && rentInputValue >= 0 && clotheInputValue >= 0) {
         totalExpenses = foodInputValue + rentInputValue + clotheInputValue;
     } else {
-        errorHandel("Expenses", " Negative number and 0 is not allow ");
+        errorHandel("Expenses", " Negative number /  NuN data is not allow ");
     }
     // return totalExpenses
     return totalExpenses;
@@ -41,8 +41,8 @@ function errorHandel(name, massage) {
     document.getElementById('error').innerHTML = `<div class="toast show align-items-center my-3 mx-auto bg-danger text-light" role="alert" aria-live="assertive" aria-atomic="true">
   <div class="d-flex">
     <div class="toast-body">
-    ${name} input: 
-    Wrang Data😒 ! ${massage}!;
+    ${name}
+    input: Data type Wrong😒!${massage}!;
    </div>
     <button type="button" id='close' class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
   </div>
