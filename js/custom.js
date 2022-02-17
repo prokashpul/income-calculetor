@@ -14,9 +14,6 @@ function expensesCalculate() {
     }
     // return totalExpenses
     return totalExpenses;
-
-
-
 }
 // total balance calculate function create
 function totalBalance() {
@@ -47,23 +44,23 @@ function errorHandel(name, massage) {
     <button type="button" id='close' class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
   </div>
 </div> `;
-    document.getElementById('close').addEventListener('click', function () {
+    document.getElementById('close').addEventListener('click', function() {
         document.getElementById('error').innerHTML = "";
     });
     // setTimeout function called . auto hide error message after 10 sec 
-    setTimeout(function () {
+    setTimeout(function() {
         document.getElementById('error').innerHTML = "";
     }, 10000);
 }
 
 // calculate button click event add
 
-document.getElementById('calculate-but').addEventListener('click', function () {
+document.getElementById('calculate-but').addEventListener('click', function() {
     // total Expenses show display
-    if (totalBalance() >= expensesCalculate()) {
-        const totalExpenses = document.getElementById('total-expenses');
-        totalExpenses.innerText = expensesCalculate();
-    }
+
+    const totalExpenses = document.getElementById('total-expenses');
+    totalExpenses.innerText = expensesCalculate();
+
     // balance function
     const balance = document.getElementById('balance');
     balance.innerText = totalBalance();
@@ -71,7 +68,7 @@ document.getElementById('calculate-but').addEventListener('click', function () {
 });
 
 // saving button add event handler 
-document.getElementById('save-btn').addEventListener('click', function () {
+document.getElementById('save-btn').addEventListener('click', function() {
     const saveInput = document.getElementById('save-input');
     const saveInputValue = parseInt(saveInput.value);
     const savingBalance = document.getElementById('saving-balance');
