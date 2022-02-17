@@ -10,7 +10,7 @@ function expensesCalculate() {
     if (foodInputValue >= 0 && rentInputValue >= 0 && clotheInputValue >= 0) {
         totalExpenses = foodInputValue + rentInputValue + clotheInputValue;
     } else {
-        errorHandel("Expenses", " Negative number /  NuN data is not allow ");
+        errorHandel("Expenses", " Negative number /  NuN data is not allow ! please try again");
     }
     // return totalExpenses
     return totalExpenses;
@@ -30,7 +30,7 @@ function totalBalance() {
             errorHandel(expensesCalculate(), `expenses Is bigger than income it's not allow`);
         }
     } else {
-        errorHandel("Income", " Negative number and 0 and NuN data is not allow ! please enter 0 up any number ");
+        errorHandel("Income", " Negative number and 0 and NuN data is not allow ! please enter 0 up any number ! please try again ");
     }
     // return  totalBalance
     return totalBalance;
@@ -49,7 +49,11 @@ function errorHandel(name, massage) {
 </div> `;
     document.getElementById('close').addEventListener('click', function () {
         document.getElementById('error').innerHTML = "";
-    })
+    });
+    // setTimeout function called . auto hide error message after 10 sec 
+    setTimeout(function () {
+        document.getElementById('error').innerHTML = "";
+    }, 10000);
 }
 
 // calculate button click event add
@@ -81,7 +85,7 @@ document.getElementById('save-btn').addEventListener('click', function () {
         const remainingBalance = document.getElementById('remaining-balance');
         remainingBalance.innerText = Math.round(parseInt(totalBalance()) - totalSave);
     } else {
-        errorHandel(saveInputValue, " up to 100 % / Negative number / NuN is not allow, please try again")
+        errorHandel(saveInputValue, " up to 100 % / Negative number / NuN is not allow, please try again");
     }
 
 });
